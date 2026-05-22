@@ -1,1 +1,159 @@
-/* Add you CSS here */
+/* Simple, beginner-friendly CSS with comments.
+	 Edit colors, fonts and spacing below as you learn. */
+
+/* Basic page styles */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background: #9abfed; /* light grey page background */
+}
+
+/* Header with name and tagline */
+.site-header {	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);	text-align: center;
+ 	padding: 40px 20px;
+	/* Use image.png from the img/ folder as the header background.
+	   Increase overlay opacity so the image appears faded and text stays readable. */
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("img/image.png");
+ 	background-size: cover;
+ 	background-position: center;
+ 	background-repeat: no-repeat;
+ 	color: #ffffff;
+ 	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.avatar {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto 12px;
+	border: 3px solid rgba(255,255,255,0.9);
+}
+
+@media (max-width: 480px) {
+	.avatar { width: 90px; height: 90px; }
+}
+.site-title {
+	margin: 0;
+	font-size: 2rem; /* change to make your name bigger/smaller */
+}
+.site-tagline {
+ 	margin: 6px 0 0;
+ 	color: rgba(255,255,255,0.9);
+}
+
+/* Main content area centered with a max width */
+main {
+	/* keep a central max width for content, but sections will stretch full-bleed */
+	max-width: 900px;
+	margin: 80px auto 20px; /* move content further down the page */
+	padding: 0 20px;
+}
+
+/* Each section has a white card-like background */
+section {
+	/* Make section backgrounds span the full viewport width (full-bleed)
+	   while keeping the inner content centered and readable. */
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	background: #dbf2ff;
+	padding: 40px 20px; /* more internal spacing */
+	margin-bottom: 40px; /* reduce space between sections */
+	border-radius: 16px;
+	border: 1.5px solid #212121;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Constrain direct children inside sections so text doesn't become too wide */
+section > * {
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Headings inside the sections */
+section h2 {
+	margin-top: 0;
+	text-align: center; /* center headings */
+}
+
+/* Center paragraphs inside sections */
+section p {
+	text-align: center;
+}
+
+/* Skills / Links / Contact lists: use flexbox so items stay aligned
+   and do not shift when the browser zoom changes. */
+.skills ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	gap: 8px; /* space between items */
+	flex-wrap: wrap; /* keep items on multiple lines if needed */
+	width: fit-content;
+}
+.contact ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	gap: 8px;
+	flex-wrap: wrap;
+	width: fit-content;
+}
+.links ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+.skills li, .contact li {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background: #e9f5ff;
+	color: #315169;
+	padding: 6px 10px;
+	border-radius: 4px;
+	margin: 0; /* gap handles spacing */
+}
+
+/* Links styling */
+.links a {
+	color: #315169;
+	text-decoration: none;
+}
+.links a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+	text-align: center;
+	padding: 20px;
+	color: #777;
+	font-size: 0.9rem;
+}
+
+/* Small responsive tweak: reduce padding on small screens */
+@media (max-width: 480px) {
+	.site-header { padding: 30px 10px; }
+	main { margin: 20px auto; }
+}
+
+/* End of style.css */
